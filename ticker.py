@@ -1,19 +1,9 @@
-from flask import Flask, render_template
-import ether
+#/usr/bin/env python
 
-app = Flask(__name__)
+import requests
 
-
-
-@app.route('/')
-def hello_world():
-	author = "Stetson"
-	name = "Stetson"
-	price = ether.getPrice()
-	return render_template('index.html', author=author, name=name, price=price)
-
-
-if __name__ == '__main__':
-	app.run()
-
+def getPrice():
+	r = requests.get('https://api.coinmarketcap.com/v1/ticker/ethereum/')
+	data = r.json()[0]
+	return data['price_usd'], data['symbol'] 
 
