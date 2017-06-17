@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html>
-   <head>
-      <title>Crypto Ticker App</title>
-   </head>
+{%extends "base.html" %}
+{% block title %} Crypto Ticker {% endblock %}
 
 
-   <body>
-	   <center>
-         <h2> Crypto Ticker Exchange</h2>
+{% block content %}
+         
+<h2> Crypto Ticker Exchange</h2>
          Ethereum ({{symbol}}) is currently priced at <b>${{ price }} </b>
    	</center>
    	
    	<div class="{{current_symbol}}-wallet">
    	    {{users_current_wallet_balance}} @ {{current_symbol_price}} 
    	</div>
-   </body>
-</html>
+
+{% endblock %}

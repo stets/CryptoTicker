@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request
 import ticker
+from flask_bootstrap import Bootstrap
 from flask_wtf import Form
 from wtforms import StringField, PasswordField
 from wtforms.validators import InputRequired, Email
 
 app = Flask(__name__)
+
 
 class LoginForm(Form):
     qty = StringField('username', validators=[InputRequired(), Email()])
@@ -23,4 +25,3 @@ def test():
 
 if __name__ == '__main__':
     app.run()
-
